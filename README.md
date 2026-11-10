@@ -1,11 +1,19 @@
-Telecom operator Interconnect aims to reduce customer churn by implementing a system to proactively identify users at risk of canceling their service, allowing the team to engage them with targeted promotions and specialized plans.
+## Project Overview: Telecom Customer Churn Prediction
 
-Goal: Develop and evaluate predictive models to determine whether a customer will cancel their service in the near future (Yes/No).
+**Interconnect**, a telecommunications operator, aims to reduce customer churn by implementing a predictive machine learning system. By proactively identifying at-risk subscribers, the business can deploy targeted retention campaigns, customized promotions, and specialized plan offers before cancellation occurs.
 
-Evaluation Metrics: Primary evaluation will be based on AUC-ROC, with Recall serving as a key secondary metric.
+* **Primary Objective:** Build and evaluate binary classification models to predict imminent customer churn (`1 = Yes`, `0 = No`).
+* **Evaluation Strategy:** **AUC-ROC** serves as the primary evaluation metric, with **Recall (Class 1)** prioritized as the key secondary metric to minimize missed churners.
 
+---
 
-Recall (Class 1 – Churn): 0.77
-Measures the model's ability to catch actual churners. Out of all customers who actually canceled, the model identified 77% (nearly 8 out of 10). This enables the marketing team to proactively target them with retention offers.Recall (Class 0 – Non-Churn): 0.93
-Measures the model's coverage of actual non-churners. Out of all customers who stayed, 93% were correctly identified as non-churners, meaning only 7% were falsely flagged as at-risk (false alarms).Accuracy: 0.89
-Overall, the model correctly classifies 89% of all customers in the test dataset. Given the class imbalance (~73% non-churn vs ~27% churn), the solid performance across both Precision (0.80) and Recall (0.77) for Class 1 confirms the high accuracy isn't just driven by majority-class bias.
+## Model Evaluation & Performance Breakdown
+
+The top-performing model achieved strong predictive capability across all core metrics on the holdout test set:
+
+| Metric | Score | Performance Context |
+| :--- | :--- | :--- |
+| **Accuracy** | **0.89** | Overall correct classification rate across the test dataset ($N = 705$). |
+| **Recall (Class 1)** | **0.77** | Correctly identifies **77% of all actual churners** (~8 out of 10), enabling timely intervention by the marketing team. |
+| **Recall (Class 0)** | **0.93** | Correctly identifies **93% of non-churning customers**, keeping false alarms down to just 7%. |
+| **Precision (Class 1)**| **0.80** | Ensures that 80% of flagged customers are true churn risks, preventing unnecessary promotional spending. |
