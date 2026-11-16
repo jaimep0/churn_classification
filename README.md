@@ -86,7 +86,7 @@ pip install -r requirements.txt
 jupyter notebook notebooks/churn_prediction.ipynb
 ```
 
-The notebook reads the data from `data/` with relative paths and saves the figures to `images/`. Seeds are fixed and TensorFlow runs in deterministic mode, so results are reproducible with the pinned versions. Other library versions or hardware can change the neural network results slightly.
+The notebook reads the data from `data/` with relative paths and saves the figures to `images/`. The original seed (`seed = 1234`) is kept, and TensorFlow runs with deterministic ops, so re-running with the pinned versions gives the same numbers. Results differ from the original course environment because of newer library versions (TensorFlow/Keras weight initialization, XGBoost).
 
 ## Repository structure
 
